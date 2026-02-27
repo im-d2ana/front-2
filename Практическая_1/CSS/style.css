@@ -1,0 +1,14 @@
+th {
+    text-align: center;
+    background: lightblue;
+    padding: 0.5vw;
+}
+td {
+    text-align: center;
+    border: solid thin lightskyblue;
+    padding: 0.5vw;
+}
+table {
+    border: solid thin lightskyblue; 
+    margin: 1vw auto;
+}
