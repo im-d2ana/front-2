@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Практическая 2</title>
+        <link rel="stylesheet" href="CSS/style.css">
+        <script src="http://d3js.org/d3.v7.min.js"></script>
+        <script src="JavaScript/main.js"></script>
+        <script src="JavaScript/image.js"></script>
+        <script src="JavaScript/path.js"></script>
+    </head>
+        <body>
+            <form id="setting">
+                <div id="speed">
+                    <p><b>Скорость анимации</b><br>
+                        <label for="spd">скорость: </label>
+                        <input type="number" id="spd" name="spd" value="1" min="1">
+                    </p>
+                </div>
+                <div id="scale">
+                    <p><b>Масштаб</b><br>
+                        <label for="x_size">по x: </label>
+                        <input type="number" id="x_size" name="x_size" value="1" max="5" min="1">
+                        <label for="x_size_end">до: </label>
+                        <input type="number" id="x_size_end" name="x_size_end" value="1" max="5" min="1"><br>
+                        
+                        <label for="y_size">по y: </label>
+                        <input type="number" id="y_size" name="y_size" value="1" max="5" min="1">
+                        <label for="y_size_end">до: </label>
+                        <input type="number" id="y_size_end" name="y_size_end" value="1" max="5" min="1"><br>
+                    </p>
+                </div>
+                <div id="rotate">
+                    <p><b>Поворт</b><br>
+                        <label for="ang">угол: </label>
+                        <input type="number" id="ang" name="ang" value="0" max="360" min="0">
+                        <label for="ang_end">до: </label>
+                        <input type="number" id="ang_end" name="ang_end" value="0" max="360" min="0">
+                    </p>
+                </div>
+                <p>
+                    <input type="button" value="Анимировать">
+                    <input type="button" value="Очистить">
+                </p>
+            </form>
+
+            <svg></svg>
+        </body>
+</html>
