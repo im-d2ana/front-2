@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <title>Список самолетов</title>
+        <link rel="stylesheet" href="CSS/style.css">
+        <script src="http://d3js.org/d3.v7.min.js"> </script>
+        <script src="JavaScript/data.js"></script>
+        <script src="JavaScript/main.js"></script>
+        <script src="JavaScript/table.js"></script>
+        <script src="JavaScript/chart.js"></script>
+    </head>
+
+    <body topmargin="50" leftmargin="50" rightmargin="50">
+        <header>
+            <nav>
+                <h3><a href="index.html">Легенды авиации</a></h3>
+                <h1><a href="compare.html">Сравнение моделей самолетов</a></h1>
+            </nav>
+        </header>
+        <hr color="#808080">
+
+        <details>
+            <summary>График</summary>
+            <form id="setting">
+                    <p>
+                        <strong>Значение по оси ОХ</strong><br>
+                        <input type="radio" id="type" name="OX" value="Тип" checked>Тип<br>
+                        <input type="radio" id="year" name="OX" value="Год первого полета">Год первого полета<br>
+                        <input type="radio" id="length" name="OX" value="Длина">Длина
+                    </p>
+
+                    <p>
+                        <strong>Значение по оси ОY</strong><br>
+                        <input type="checkbox" id="max_speed" name="OY" value="max">Максимальная скорость<br>
+                        <input type="checkbox" id="min_speed" name="OY" value="min">Минимальная скорость<br>
+                    </p>
+
+                    <label>Тип графика </label>
+                    <select id="graph_type">
+                        <option value="dot">Точечная диаграмма</option>
+                        <option value="histogram">Гистограмма</option>
+                        <option value="graphic">График</option>
+                    </select>
+
+                    <p>
+                        <input type="button" value="Построить">
+                    </p>
+
+                <svg style="display: none;"></svg>
+            </form>
+        </details>
+
+        <details>
+            <summary>Фильтры</summary>
+            <form id="filter">
+                <p>
+                    <label>Название:</label>
+                    <input type="text" id="planeName"><br>
+                </p>
+
+                <p>
+                    <label>Тип:</label>
+                    <input type="text" id="planeType"><br>
+                </p>
+
+                <p>
+                    <label>Год первого полета:</label>
+                    от <input type="number" id="year_start">
+                    до <input type="number" id="year_end"><br>
+                </p>
+
+                <p>
+                    <label>Длина:</label>
+                    от <input type="number" id="length_start">
+                    до <input type="number" id="length_end"><br>
+                </p>
+
+                <p>
+                    <label>Размах крыла: </label>
+                    от <input type="number" id="wing_start">
+                    до <input type="number" id="wing_end"><br>
+                </p>
+
+                <p>
+                    <label>Макс. скорость: </label>
+                    от <input type="number" id="speed_start">
+                    до <input type="number" id="speed_end">
+                </p>
+
+                <p>
+                    <input type="button" value="Найти">
+                    <input type="button" value="Очистить фильтры">
+                </p>
+            </form>
+        </details>
+
+        <details>
+            <summary>Сортировка</summary>
+            <form id="sort">
+                <p>Сортировать по</p>
+                <p>
+                    <label>Первый уровень: </label>
+                    <select id="fieldsFirst"></select>
+                    по убыванию ? <input type="checkbox" id="fieldsFirstDesc">
+                </p>
+
+                <p>
+                    <label>Второй уровень: </label>
+                    <select id="fieldsSecond"></select>
+                    по убыванию ? <input type="checkbox" id="fieldsSecondDesc">
+                </p>
+
+                <p>
+                    <label>Третий уровень: </label>
+                    <select id="fieldsThird"></select>
+                    по убыванию ? <input type="checkbox" id="fieldsThirdDesc">
+                </p>
+
+                <p>
+                    <input type="button" value="Сортировать">
+                    <input type="button" value="Сбросить сортировку">
+                </p>
+            </form>
+        </details>
+
+        <input type="button" value="Скрыть таблицу">
+        <input type="button" value="Показать таблицу" style="display: none;">
+        <table id="list"></table>
+    </body>
+</html>
